@@ -1,5 +1,5 @@
 # webhooks_microservice
-The webhooks microservice is made using Moleculer and the backend is made using Express
+The webhooks microservice is made using <strong>Moleculer</Strong> and the backend is made using <strong>Express</strong>
 
 ## API Endpoints
 
