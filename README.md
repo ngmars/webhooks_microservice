@@ -1,6 +1,6 @@
 # webhooks_microservice
 The webhooks microservice is made using <strong>Moleculer</Strong> and the backend is made using <strong>Express</strong>
-The API's can be tested here ![https://dytetask.herokuapp.com](https://dytetask.herokuapp.com)
+The API's can be tested by appending the endpoint to https://dytetask.herokuapp.com 
 
 ## API Endpoints
 
