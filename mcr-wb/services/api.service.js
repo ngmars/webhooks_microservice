@@ -4,7 +4,7 @@ const ApiGateway = require("moleculer-web");
 const E = ApiGateway.Errors
 const bcrypt= require('bcryptjs')
 const jwt = require('jsonwebtoken')
-
+const Webhooks = require("../models/webhooks.model");
 module.exports = {
 	name: "ip",
 	mixins: [ApiGateway],
@@ -17,7 +17,7 @@ module.exports = {
 
 		routes: [
 			{
-				path: "/ip",
+				path: "/api",
 
 				whitelist: [
 					"auth.signup","auth.login"
@@ -63,6 +63,7 @@ module.exports = {
 					"webhook.update",
 					"webhook.delete",
 					"webhook.list",
+					"webhook.trigger"
 				],
 				
 				use: [],
@@ -109,10 +110,9 @@ module.exports = {
 			options: {}
 		}
 	},
-
+	
 	methods: {
 
-		
 		async authenticate(ctx, route, req) {
 			const authHeader = req.headers["authorization"];
 			if (!authHeader) {

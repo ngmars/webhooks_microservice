@@ -94,7 +94,7 @@ module.exports = {
 	// Number of seconds to send heartbeat packet to other nodes.
 	heartbeatInterval: 10,
 	// Number of seconds to wait before setting node to unavailable status.
-	heartbeatTimeout: 30,
+	heartbeatTimeout: 3000,
 
 	// Cloning the params of context if enabled. High performance impact, use it with caution!
 	contextParamsCloning: false,
@@ -104,7 +104,7 @@ module.exports = {
 		// Enable feature
 		enabled: false,
 		// Number of milliseconds to wait before shuting down the process.
-		shutdownTimeout: 5000,
+		shutdownTimeout: 10000,
 	},
 
 	// Disable built-in request & emit balancer. (Transporter must support it, as well.). More info: https://moleculer.services/docs/0.14/networking.html#Disabled-balancer

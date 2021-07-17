@@ -4,6 +4,7 @@ const MongooseAdapter = require("moleculer-db-adapter-mongoose");
 const Webhooks = require("../models/webhooks.model");
 const bcrypt= require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const axios = require('axios')
 module.exports = {
 
 	name: "webhook",
@@ -77,7 +78,14 @@ module.exports = {
 			rest :  "GET webhook",
 
 			async handler(ctx,req,res) {
+				const ipAddress = ctx.params.ipAddress;
 				return this.getAllWebhook()
+			}
+		},
+		trigger:{
+			rest: "POST ",
+			async handler(ctx,req,res) {
+				return this.postWebhook()
 			}
 		}
 
@@ -147,6 +155,29 @@ module.exports = {
 				const error= new Error('Unable to find!');
 				error.statusCode= 401;
 				return await Promise.reject(error);
+			}
+		},
+		async postWebhook(ipAddress){
+			let foundWebhook = await Webhooks.find({})
+			let logs=[]
+			let apiResponses=[]
+			if(foundWebhook.length>10){
+				for(let i = 0; i < foundWebhook.length; 10) {
+					let axiosList=[]
+					if(foundWebhook[i] && foundWebhook[i]!=null){
+						axiosList.push(axios.post(foundWebhook[i].webhook,{data:ipAddress,time:Date.now()}))
+					}
+					axios.all(axiosList).then(axios.spread((responses) => {
+						console.log(responses)
+						apiResponses.push(...responses)
+						// use/access the results 
+					  })).catch(errors => {
+						// react on errors.
+						logs.push(errors)
+					  })
+					
+				}
+				return await Promise.resolve(logs)	
 			}
 		}
 	},
