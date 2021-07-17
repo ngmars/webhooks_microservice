@@ -41,42 +41,42 @@ npm run dev
 You need to pass the `Authorization` header with `Bearer {SERVER_SECRET}`.
 
 ## Body (To be sent as JSON body)
-### POST /api/auth/signup
-  {
-    "username":"user89",
-    "password":"123456",
-    "role":"admin"
-  }
+### POST /api/auth/signup<br/>
+  {<br/>
+    "username":"user89",<br/>
+    "password":"123456",<br/>
+    "role":"admin"<br/>
+  }<br/>
   
-### POST /api/auth/login
-  {
-    "username":"user89",
-    "password":"123456",
-  }
+### POST /api/auth/login<br/>
+  {<br/>
+    "username":"user89",<br/>
+    "password":"123456",<br/>
+  }<br/>
   
-### POST /ip/webhook/webhook
-  {
-    "targetUrl":"https://eehl21ssuvns4z2.m.pipedream.net"
-  }
+### POST /ip/webhook/webhook<br/>
+  {<br/>
+    "targetUrl":"https://eehl21ssuvns4z2.m.pipedream.net"<br/>
+  }<br/>
   
-### GET /ip/webhook/webhook
-  {
-    
-  }
+### GET /ip/webhook/webhook<br/>
+  {<br/>
+    <br/>
+  }<br/>
 
-### PUT /ip/webhook/webhook
-  {   
-    "id": "60f2d205799d7434a672c099",
-    "newTargetUrl":"https://eehl21ssuvns.m.pipedream.net"
-  }
+### PUT /ip/webhook/webhook<br/>
+  {   <br/>
+    "id": "60f2d205799d7434a672c099",<br/>
+    "newTargetUrl":"https://eehl21ssuvns.m.pipedream.net"<br/>
+  }<br/>
 
-### DELETE /ip/webhook/webhook
-  {
-    "id": "60f2d205799d7434a672c099",
-  }
+### DELETE /ip/webhook/webhook<br/>
+  {<br/>
+    "id": "60f2d205799d7434a672c099",<br/>
+  }<br/>
 
-### POST /ip/webhook
-  {
-    "ipAddress": "127.0.0.1",
-  }
-  ### Note: The trigger API causes the hosted backend to crash, hence not deployed the route /ip/webhook
+### POST /ip/webhook<br/>
+  {<br/>
+    "ipAddress": "127.0.0.1",<br/>
+  }<br/>
+  ### Note: The trigger API causes the hosted backend to crash, hence not deployed the route /ip/webhook<br/>
