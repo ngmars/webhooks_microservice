@@ -1,0 +1,47 @@
+{
+  "name": "mcr-wb",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "moleculer-repl": "^0.6.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "moleculer": "^0.14.13",
+    "moleculer-db": "^0.8.14",
+    "moleculer-db-adapter-mongo": "^0.4.7",
+    "moleculer-db-adapter-mongoose": "^0.8.10",
+    "moleculer-web": "^0.9.1",
+    "mongoose": "^5.13.3",
+    "nats": "^1.4.12"
+  },
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
