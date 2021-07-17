@@ -31,7 +31,7 @@ git clone https://github.com/ngmars/webhooks_microservice.git
 cd webhooks_microservice/mcr-wb
 npm install
 npm run dev
-(docker is configured if required)
+#(docker is configured if required)
 ```
 
 
