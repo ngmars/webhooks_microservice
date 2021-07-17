@@ -20,8 +20,7 @@ module.exports = {
 				path: "/ip",
 
 				whitelist: [
-					"auth.login",
-					"auth.signup"
+					"auth.signup","auth.login"
 				],
 				
 				use: [],
